@@ -1,0 +1,14 @@
+<h1>List: <%= @list.title %></h1>
+
+<p>Completed? <%= @list.completed ? 'Yes' : 'No' %></p>
+
+<% if current_user.id == @list.user_id %>
+  <ul>
+    <li><a href="/lists/<%= @list.id %>/edit">Edit List</a></li>
+  </ul>
+  <form action="/lists/<%= @list.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+
+    <input type="submit" value="Delete List">
+  </form>
+<% end %>
