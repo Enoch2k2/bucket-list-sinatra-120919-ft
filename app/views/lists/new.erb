@@ -1,15 +1,19 @@
 <h1>Create List</h1>
 
 <form action="/lists" method="post">
-  <div>
-    <label for="title">Title: </label>
+  <div class="input-field">
     <input type="text" name="list[title]" id="title">
+    <label for="title">Title: </label>
   </div>
 
   <div>
-    <label for="completed">Completed? </label>
-    <input type="checkbox" name="list[completed]" id="completed">
+    <p>
+      <label>
+        <input type="checkbox" name="list[completed]" id="completed" />
+        <span>Completed ?</span>
+      </label>
+    </p>
   </div>
 
-  <input type="submit" value="Create List">
+  <input type="submit" value="Create List" class="btn indigo darken-4">
 </form>

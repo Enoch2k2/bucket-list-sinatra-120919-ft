@@ -1,7 +1,17 @@
 <h1>All lists</h1>
 
-<ul>
+<div class="row">
   <% @lists.each do |list| %>
-    <li><a href="/lists/<%= list.id %>"><%= list.title %></a></li>
+    <div class="col s12 m6">
+      <div class="card indigo darken-4">
+        <div class="card-content white-text">
+          <span class="card-title"><%= list.title %></span>
+          <p>Completed : <%= list.completed ? 'Yes' : 'No' %></p>
+        </div>
+        <div class="card-action">
+          <a href="/lists/<%= list.id %>/edit">Edit Me!</a>
+        </div>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
